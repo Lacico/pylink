@@ -150,7 +150,7 @@ def pattern_generator(peak_gain_dbi, null=-20.0, eff=0.7):
     b = 1.0
     t = (math.log((a/(from_db(null-gain))) - 1) / b) + sig_lower
 
-    sigmoid = np.vectorize(__sigmoid_gen(a=a, b=b, t=t), otypes=[np.float])
+    sigmoid = np.vectorize(__sigmoid_gen(a=a, b=b, t=t), otypes=[float])
 
     # set things up
     n_half = int(bw_null / step / 2.0)
